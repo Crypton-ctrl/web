@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node -e \"const fs=require('fs'); fs.cpSync('dist/assets','assets',{recursive:true}); fs.cpSync('dist','docs',{recursive:true});\"",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "oxlint",
